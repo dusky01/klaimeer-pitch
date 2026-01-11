@@ -1,8 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Milker';
+  src: url('/milker/Milker.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TexGyreAdventor';
+  src: url('/tex-gyre-adventor/texgyreadventor-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TexGyreAdventor';
+  src: url('/tex-gyre-adventor/texgyreadventor-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheGodfather';
+  src: url('/the-godfather/TheGodfather-v2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --font-aalto: 'Milker', sans-serif;
+  --electric-indigo: #6366F1;
+  --klaimeer-gold: #F59E0B;
+  --deep-slate: #1E293B;
 }
 
 @theme inline {
@@ -20,7 +57,107 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(to bottom, #0a0a0a, var(--deep-slate), #0a0a0a);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'TexGyreAdventor', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p, li, span.text-gray-300, span.text-gray-400, div.text-gray-400, div.text-gray-300 {
+  font-family: 'TexGyreAdventor', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-aalto);
+}
+
+h4, h5, h6 {
+  font-family: var(--font-aalto);
+}
+
+/* Milker Display Font Classes for Modern Effects */
+.font-aalto {
+  font-family: var(--font-aalto);
+}
+
+.font-godfather {
+  font-family: 'TheGodfather', serif;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+
+.aalto-hero {
+  font-family: var(--font-aalto);
+  letter-spacing: 0.06em;
+  line-height: 0.9;
+}
+
+.aalto-display {
+  font-family: var(--font-aalto);
+  letter-spacing: 0.02em;
+  font-weight: normal;
+}
+
+.aalto-wide {
+  font-family: var(--font-aalto);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.aalto-tight {
+  font-family: var(--font-aalto);
+  letter-spacing: -0.03em;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mirror-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.mirror-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.mirror-shine:hover::before {
+  left: 100%;
 }
