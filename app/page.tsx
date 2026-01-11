@@ -186,7 +186,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="absolute left-4 md:left-8 top-4 md:top-8 z-20"
         >
-          <Image src="/logo.png" alt="Klaimeer Logo" width={120} height={120} className="md:w-[200px] md:h-[200px] drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]" />
+          <Image src="/logo.png" alt="Klaimeer Logo" width={200} height={200} className="w-[120px] h-[120px] md:w-[200px] md:h-[200px] object-contain drop-shadow-[0_0_15px_rgba(245,158,11,0.5)]" />
         </motion.div>
         
         <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
