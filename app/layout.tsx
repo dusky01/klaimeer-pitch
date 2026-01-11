@@ -9,6 +9,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Klaimeer - $8M Seed Round | Virtual Land Ownership Platform",
   description: "The world's first gamified virtual land ownership platform. Own the world, one plot at a time. Seeking $8M seed investment.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
 };
 
 export default function RootLayout({
